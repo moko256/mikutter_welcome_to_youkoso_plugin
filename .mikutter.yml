@@ -4,6 +4,6 @@ depends:
   mikutter: 3.0.7
   plugin: []
 version: '1.0'
-author: 
-name: Welcome to ようこ plugin
-description: Welcome to ようこ plugin!
+author: moko256
+name: Welcome to ようこそ plugin
+description: Welcome to ようこそ plugin!
