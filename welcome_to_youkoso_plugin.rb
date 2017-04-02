@@ -16,7 +16,7 @@ Plugin.create(:welcome_to_youkoso_plugin) do
     )
     dialog.vbox.add(Gtk::Label.new('Welcome to ようこそ'))
     where = Gtk::Entry.new()
-    where.text = 'じゃパリパーク'
+    where.text = 'ジャパリパーク'
     dialog.vbox.add(where)
     dialog.vbox.add(Gtk::Label.new('!	今日も'))
     why = Gtk::Entry.new()
