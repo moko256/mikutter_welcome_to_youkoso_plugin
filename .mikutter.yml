@@ -1,9 +1,9 @@
 ---
 slug: :welcome_to_youkoso_plugin
 depends:
-  mikutter: 3.0.7
+  mikutter: 3.6.0
   plugin: []
-version: '1.0'
+version: '1.1'
 author: moko256
 name: Welcome to ようこそ plugin
 description: Welcome to ようこそ plugin!
