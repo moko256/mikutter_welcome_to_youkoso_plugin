@@ -8,6 +8,21 @@ Plugin.create(:welcome_to_youkoso_plugin) do
     visible: true,
     role: :timeline
   ) do |opt|
+=begin
+    dialog('Welcome to ようこそ'){
+
+        input '場所（例：ジャパリパーク）', :where 
+        label '!   今日も'
+        input '誰（例：フレンズ達が）', :who 
+        label 'ドッタンバッタン大騒ぎ'
+
+    }.next{ |it|
+      text = "Welcome to ようこそ#{it[:where]}!\n今日も#{it[:who]}ドッタンバッタン大騒ぎ"
+      world, = Plugin.filtering(:world_current, nil)
+      compose(world, body: text)
+    }
+=end
+
     dialog = Gtk::Dialog.new('Welcome to ようこそ',
       $main_application_window,
       Gtk::Dialog::DESTROY_WITH_PARENT,
@@ -28,7 +43,8 @@ Plugin.create(:welcome_to_youkoso_plugin) do
     if dialog.run == Gtk::Dialog::RESPONSE_OK
       text = "Welcome to ようこそ#{where.text}!\n今日も#{why.text}ドッタンバッタン大騒ぎ"
       if Gtk::Dialog::confirm(text)
-        Service.primary.post(:message => text)
+        world, = Plugin.filtering(:world_current, nil)
+        compose(world, body: text)
       end
     end
     dialog.destroy
